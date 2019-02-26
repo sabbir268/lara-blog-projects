@@ -17,7 +17,6 @@ mix.js('resources/assets/js/app.js', 'public/js')
 
 mix.styles([
     'resources/assets/css/sb-admin-2.css',
-    'resources/assets/css/bootstrap-datatable/dataTables.bootstrap4.css',
     'resources/assets/css/font-awesome/font-awesome.css'
 
 ], 'public/css/libs.css');
@@ -25,7 +24,7 @@ mix.styles([
 mix.scripts([
     'resources/assets/js/jquery/jquery.js',
     'resources/assets/js/jquery/jquery.easing.js',
-    'resources/assets/js/bootstrap/bootstrap.bundle.js',    
-    'resources/assets/js/bootstrap-datatable/jquery.dataTables.js'
+    'resources/assets/js/bootstrap/bootstrap.bundle.js',
+    'resources/assets/js/sb-admin-2.js',
 
 ], 'public/js/libs.js');
