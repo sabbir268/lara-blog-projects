@@ -27,6 +27,7 @@
 					<th>{{$user->created_at->diffForHumans()}} </th>
 					<th>{{$user->updated_at->diffForHumans()}} </th>
 				</tr>
+				@endforeach
 				@endif
 			</tbody>
 

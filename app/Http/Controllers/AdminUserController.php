@@ -65,7 +65,7 @@ class AdminUserController extends Controller
 
         User::create($data);
 
-        return redirect('/admin/users');
+        return redirect('/admin/users')->with('message', 'User has been Created');
     }
 
     /**
@@ -123,7 +123,7 @@ class AdminUserController extends Controller
 
         $user->update($data);
 
-        return redirect('/admin/users');
+        return redirect('/admin/users')->with('message', 'User has been Updated');
     }
 
     /**
@@ -134,6 +134,17 @@ class AdminUserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        unlink(public_path().$user->photo->file);
+
+        $user->delete();
+
+
+
+        return redirect('/admin/users')->with('message', 'User has been deleted');
     }
+
+
+   
 }
