@@ -17,6 +17,11 @@ class Photo extends Model
     	return $this->hasMany(User::class);
     }
 
+    public function post()
+    {
+        return $this->hasMany(Post::class);
+    }
+
     public function getFileAttribute($value)
     {
     	return $this->path.$value;
