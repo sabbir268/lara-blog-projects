@@ -33,9 +33,9 @@
 				<tr>
 					<th>{{$post->id}} </th>
 					<th> <img height="50" width="80" src="{{$post->photo->file}}" alt="image"> </th>
-					<th>{{$post->title}}</th>
+					<th>{{str_limit($post->title,20)}}</th>
 					<th>{{$post->category->name}} </th>
-					<th>{{$post->body}} </th>
+					<th>{{str_limit($post->body,50)}} </th>
 					<th>{{$post->created_at->diffForHumans()}} </th>
 					<th>{{$post->updated_at->diffForHumans()}} </th>
 					<th><div class="btn-group"><button class="btn btn-success rounded-0"><a class="text-white" href="/admin/posts/{{$post->id}}/edit"><i class="fa fa-edit"></i></a></button>
