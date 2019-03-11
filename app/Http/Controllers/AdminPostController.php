@@ -8,6 +8,7 @@ use App\Http\Requests\PostCreateRequest;
 use App\Post;
 use App\Photo;
 use App\Category;
+use App\Comment;
 
 class AdminPostController extends Controller
 {
@@ -67,7 +68,14 @@ class AdminPostController extends Controller
      */
     public function show($id)
     {
-        //
+        $Post = new Post();
+
+        
+        $categorys = Category::all();
+        $latestPost = $Post->orderBy('created_at','desc')->limit(5)->get();
+        $post = $Post->findOrFail($id);
+        $comments = $post->comment;
+        return view('blog.post',compact('post','categorys','latestPost','comments'));
     }
 
     /**
@@ -122,5 +130,17 @@ class AdminPostController extends Controller
         $post->delete();
 
         return redirect('/admin/posts')->with('message', 'Post has been Deleted');
+    }
+
+
+
+    public function blog()
+    {
+        $Post = new Post();
+
+        $posts = Post::all();
+        $categorys = Category::all();
+        $latestPost = $Post->orderBy('created_at','desc')->limit(5)->get();
+        return view('blog.blogs',compact('posts','categorys','latestPost'));
     }
 }

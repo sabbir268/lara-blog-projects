@@ -17,7 +17,8 @@ mix.js('resources/assets/js/app.js', 'public/js')
 
 mix.styles([
     'resources/assets/css/sb-admin-2.css',
-    'resources/assets/css/font-awesome/font-awesome.css'
+    'resources/assets/css/font-awesome/font-awesome.css',
+    'resources/assets/css/style.default.css'
 
 ], 'public/css/libs.css');
 

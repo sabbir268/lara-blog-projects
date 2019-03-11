@@ -34,7 +34,7 @@
 					<th>{{$post->id}} </th>
 					<th> <img height="50" width="80" src="{{$post->photo->file}}" alt="image"> </th>
 					<th>{{str_limit($post->title,20)}}</th>
-					<th>{{$post->category->name}} </th>
+					<th>{{$post->category ? $post->category->name : 'Uncategorise'}} </th>
 					<th>{{str_limit($post->body,50)}} </th>
 					<th>{{$post->created_at->diffForHumans()}} </th>
 					<th>{{$post->updated_at->diffForHumans()}} </th>
