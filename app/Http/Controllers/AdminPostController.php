@@ -138,7 +138,7 @@ class AdminPostController extends Controller
     {
         $Post = new Post();
 
-        $posts = Post::all();
+        $posts = Post::paginate(2);
         $categorys = Category::all();
         $latestPost = $Post->orderBy('created_at','desc')->limit(5)->get();
         return view('blog.blogs',compact('posts','categorys','latestPost'));
